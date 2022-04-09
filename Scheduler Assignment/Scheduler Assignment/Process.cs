@@ -14,7 +14,7 @@ namespace Scheduler_Assignment
         public int? priority;
         private static int count = 0;
 
-        Process(float arrivalTime, float burstTime, int? priority = null)
+        public Process(float arrivalTime, float burstTime, int? priority = null)
         {
             count++;
             this.name = "P" + count;

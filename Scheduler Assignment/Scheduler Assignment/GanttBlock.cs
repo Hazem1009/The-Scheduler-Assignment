@@ -8,11 +8,10 @@ namespace Scheduler_Assignment
 {
     internal class GanttBlock
     {
-        string name { get; set; }
-        int startTime { get; set; }
-        int endTime { get; set; }
+        public string name;
+        public float startTime, endTime;
 
-        GanttBlock(string name, int startTime, int endTime)
+        public GanttBlock(string name, float startTime, float endTime)
         {
             this.name = name;
             this.startTime = startTime;
