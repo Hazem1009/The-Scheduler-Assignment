@@ -17,7 +17,7 @@ namespace Scheduler_Assignment
         Process(float arrivalTime, float burstTime, int? priority = null)
         {
             count++;
-            name = "P" + count;
+            this.name = "P" + count;
             this.arrivalTime = arrivalTime;
             this.burstTime = burstTime;
             this.priority = priority;
