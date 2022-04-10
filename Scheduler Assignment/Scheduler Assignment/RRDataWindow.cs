@@ -39,7 +39,10 @@ namespace Scheduler_Assignment
             int arrivalTime = int.Parse(richTextBox1.Text);
             int burstTime = int.Parse(richTextBox2.Text);
             insertedNumber++;
-            if (insertedNumber == processesNumber) insertButton.Enabled = false;
+            if (insertedNumber == processesNumber) {
+                insertButton.Enabled = false;
+                richTextBox3.Enabled = true;
+            }
             Process p = new Process(arrivalTime, burstTime);
             processList.Add(p);
             string[] row = {p.name, p.arrivalTime.ToString(), p.burstTime.ToString()};
