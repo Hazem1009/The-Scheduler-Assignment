@@ -32,7 +32,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.selectButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,21 +77,21 @@
             this.comboBox1.Size = new System.Drawing.Size(151, 28);
             this.comboBox1.TabIndex = 3;
             // 
-            // button1
+            // selectButton
             // 
-            this.button1.Location = new System.Drawing.Point(338, 316);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Select";
-            this.button1.UseVisualStyleBackColor = true;
+            this.selectButton.Location = new System.Drawing.Point(338, 316);
+            this.selectButton.Name = "selectButton";
+            this.selectButton.Size = new System.Drawing.Size(94, 29);
+            this.selectButton.TabIndex = 4;
+            this.selectButton.Text = "Select";
+            this.selectButton.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selectButton);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
@@ -109,6 +109,6 @@
         private RichTextBox richTextBox1;
         private Label label2;
         private ComboBox comboBox1;
-        private Button button1;
+        private Button selectButton;
     }
 }
