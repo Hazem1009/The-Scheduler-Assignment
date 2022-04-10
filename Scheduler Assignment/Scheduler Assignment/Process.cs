@@ -11,6 +11,7 @@ namespace Scheduler_Assignment
         public String name;
         public float arrivalTime;
         public float burstTime;
+        public float remainingTime; 
         public int? priority;
         private static int count = 0;
 
@@ -21,6 +22,7 @@ namespace Scheduler_Assignment
             this.arrivalTime = arrivalTime;
             this.burstTime = burstTime;
             this.priority = priority;
+            this.remainingTime=burstTime;
         }
     }
 }
