@@ -8,7 +8,7 @@ namespace Scheduler_Assignment
 {
     internal class PriorityNonPreemptive
     {
-        (float, List<GanttBlock>) Priority_NP(List<Process> processes)
+        public static (float, List<GanttBlock>) Priority_NP(List<Process> processes)
         {
             float totalWaitingTime = 0;
             List<GanttBlock> ganttBlocks = new List<GanttBlock>();
