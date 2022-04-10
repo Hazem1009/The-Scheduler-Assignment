@@ -11,5 +11,21 @@ namespace Scheduler_Assignment
         {
 
         }
+
+        private void selectButton_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(richTextBox1.Text, out int result))
+            {
+                errorProvider1.SetError(label1, "Please enter a valid number");
+            }
+            else if (int.Parse(richTextBox1.Text) <= 0)
+            {
+                errorProvider1.SetError(label1, "Number of processes must be positive");
+            }
+            else if (comboBox1.SelectedItem == null)
+            {
+                errorProvider1.SetError(label2, "Please select an algorithm");
+            }
+        }
     }
 }
