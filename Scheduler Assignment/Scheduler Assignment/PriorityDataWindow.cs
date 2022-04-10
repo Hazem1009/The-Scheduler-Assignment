@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Scheduler_Assignment
 {
-    public partial class BasicDataWindow : Form
+    public partial class PriorityDataWindow : Form
     {
         private int processesNumber;
         private int insertedNumber = 0;
         private MainWindow mainWindow;
         private List<Process> processList = new List<Process>();
 
-        public BasicDataWindow(int number, MainWindow main)
+        public PriorityDataWindow(int number, MainWindow main)
         {
             InitializeComponent();
             processesNumber = number;

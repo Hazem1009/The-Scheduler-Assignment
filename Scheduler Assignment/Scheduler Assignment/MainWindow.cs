@@ -28,7 +28,7 @@ namespace Scheduler_Assignment
             }
             else
             {
-                BasicDataWindow dataWindow = new BasicDataWindow(int.Parse(richTextBox1.Text));
+                BasicDataWindow dataWindow = new BasicDataWindow(int.Parse(richTextBox1.Text), this);
                 dataWindow.Show();
                 this.Hide();
             }

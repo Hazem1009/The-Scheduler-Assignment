@@ -1,6 +1,6 @@
 ﻿namespace Scheduler_Assignment
 {
-    partial class BasicDataWindow
+    partial class PriorityDataWindow
     {
         /// <summary>
         /// Required designer variable.

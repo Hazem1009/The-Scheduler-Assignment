@@ -1,6 +1,6 @@
 ﻿namespace Scheduler_Assignment
 {
-    partial class BasicDataWindow
+    partial class RRDataWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -157,8 +157,8 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "BasicDataWindow";
-            this.Text = "BasicDataWindow";
+            this.Name = "RRDataWindow";
+            this.Text = "RRDataWindow";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
