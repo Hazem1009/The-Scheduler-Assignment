@@ -26,6 +26,12 @@ namespace Scheduler_Assignment
             {
                 errorProvider1.SetError(label2, "Please select an algorithm");
             }
+            else
+            {
+                BasicDataWindow dataWindow = new BasicDataWindow(int.Parse(richTextBox1.Text));
+                dataWindow.Show();
+                this.Hide();
+            }
         }
     }
 }
