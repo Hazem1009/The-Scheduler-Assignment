@@ -58,6 +58,6 @@ namespace Scheduler_Assignment
                 return (AvgWaitingTime, AvgTurnAroundTime, ganttBlocks);
                 
             }
-        }
+        
     }
 }
