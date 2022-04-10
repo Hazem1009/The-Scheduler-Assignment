@@ -28,7 +28,19 @@ namespace Scheduler_Assignment
             }
             else
             {
-                BasicDataWindow dataWindow = new BasicDataWindow(int.Parse(richTextBox1.Text), this);
+                Form dataWindow;
+                if (comboBox1.Text == "FCFS" || comboBox1.Text == "SJF (Non-Preemptive)" || comboBox1.Text == "SJF (Preemptive)")
+                {
+                    dataWindow = new BasicDataWindow(int.Parse(richTextBox1.Text), this);
+                }
+                else if (comboBox1.Text == "Round Robin")
+                {
+                    dataWindow = new RRDataWindow(int.Parse(richTextBox1.Text), this);
+                }
+                else
+                {
+                    dataWindow = new PriorityDataWindow(int.Parse(richTextBox1.Text), this);
+                }
                 dataWindow.Show();
                 this.Hide();
             }

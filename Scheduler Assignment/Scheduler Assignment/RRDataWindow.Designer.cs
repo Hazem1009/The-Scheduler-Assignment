@@ -39,6 +39,8 @@
             this.Burst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backButton = new System.Windows.Forms.Button();
             this.drawButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +81,7 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(186, 325);
+            this.insertButton.Location = new System.Drawing.Point(191, 368);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(94, 29);
             this.insertButton.TabIndex = 5;
@@ -144,11 +146,30 @@
             this.drawButton.Text = "Draw";
             this.drawButton.UseVisualStyleBackColor = true;
             // 
-            // BasicDataWindow
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(77, 297);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Quantum";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(176, 294);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(125, 37);
+            this.richTextBox3.TabIndex = 10;
+            this.richTextBox3.Text = "";
+            // 
+            // RRDataWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.drawButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dataGridView1);
@@ -177,5 +198,7 @@
         private DataGridViewTextBoxColumn PName;
         private DataGridViewTextBoxColumn Arrival;
         private DataGridViewTextBoxColumn Burst;
+        private Label label3;
+        private RichTextBox richTextBox3;
     }
 }

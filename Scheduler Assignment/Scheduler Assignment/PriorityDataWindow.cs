@@ -36,13 +36,14 @@ namespace Scheduler_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int arrivalTime = int.Parse(richTextBox1.Text);
-            int burstTime = int.Parse(richTextBox2.Text);
+            float arrivalTime = float.Parse(richTextBox1.Text);
+            float burstTime = float.Parse(richTextBox2.Text);
+            int priority = int.Parse(richTextBox3.Text);
             insertedNumber++;
             if (insertedNumber == processesNumber) insertButton.Enabled = false;
-            Process p = new Process(arrivalTime, burstTime);
+            Process p = new Process(arrivalTime, burstTime, priority);
             processList.Add(p);
-            string[] row = {p.name, p.arrivalTime.ToString(), p.burstTime.ToString()};
+            string[] row = {p.name, p.arrivalTime.ToString(), p.burstTime.ToString(), p.priority.ToString()};
             dataGridView1.Rows.Add(row);
         }
 

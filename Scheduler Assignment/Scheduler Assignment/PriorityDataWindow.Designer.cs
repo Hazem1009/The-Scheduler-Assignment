@@ -34,11 +34,14 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.insertButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.backButton = new System.Windows.Forms.Button();
+            this.drawButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Burst = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backButton = new System.Windows.Forms.Button();
-            this.drawButton = new System.Windows.Forms.Button();
+            this.Priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 210);
+            this.label2.Location = new System.Drawing.Point(77, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 20);
             this.label2.TabIndex = 2;
@@ -71,7 +74,7 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(176, 207);
+            this.richTextBox2.Location = new System.Drawing.Point(176, 195);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.Size = new System.Drawing.Size(125, 38);
             this.richTextBox2.TabIndex = 4;
@@ -79,7 +82,7 @@
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(186, 325);
+            this.insertButton.Location = new System.Drawing.Point(186, 342);
             this.insertButton.Name = "insertButton";
             this.insertButton.Size = new System.Drawing.Size(94, 29);
             this.insertButton.TabIndex = 5;
@@ -93,13 +96,50 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PName,
             this.Arrival,
-            this.Burst});
+            this.Burst,
+            this.Priority});
             this.dataGridView1.Location = new System.Drawing.Point(488, 103);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(300, 188);
             this.dataGridView1.TabIndex = 6;
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(94, 29);
+            this.backButton.TabIndex = 7;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click_1);
+            // 
+            // drawButton
+            // 
+            this.drawButton.Location = new System.Drawing.Point(659, 368);
+            this.drawButton.Name = "drawButton";
+            this.drawButton.Size = new System.Drawing.Size(94, 29);
+            this.drawButton.TabIndex = 8;
+            this.drawButton.Text = "Draw";
+            this.drawButton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(77, 281);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Priority";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(176, 278);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(125, 39);
+            this.richTextBox3.TabIndex = 10;
+            this.richTextBox3.Text = "";
             // 
             // PName
             // 
@@ -125,30 +165,21 @@
             this.Burst.Name = "Burst";
             this.Burst.ReadOnly = true;
             // 
-            // backButton
+            // Priority
             // 
-            this.backButton.Location = new System.Drawing.Point(12, 12);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(94, 29);
-            this.backButton.TabIndex = 7;
-            this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click_1);
+            this.Priority.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Priority.HeaderText = "Priority";
+            this.Priority.MinimumWidth = 6;
+            this.Priority.Name = "Priority";
+            this.Priority.ReadOnly = true;
             // 
-            // drawButton
-            // 
-            this.drawButton.Location = new System.Drawing.Point(659, 368);
-            this.drawButton.Name = "drawButton";
-            this.drawButton.Size = new System.Drawing.Size(94, 29);
-            this.drawButton.TabIndex = 8;
-            this.drawButton.Text = "Draw";
-            this.drawButton.UseVisualStyleBackColor = true;
-            // 
-            // BasicDataWindow
+            // PriorityDataWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.drawButton);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.dataGridView1);
@@ -157,7 +188,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "BasicDataWindow";
+            this.Name = "PriorityDataWindow";
             this.Text = "BasicDataWindow";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -174,8 +205,11 @@
         private DataGridView dataGridView1;
         private Button backButton;
         private Button drawButton;
+        private Label label3;
+        private RichTextBox richTextBox3;
         private DataGridViewTextBoxColumn PName;
         private DataGridViewTextBoxColumn Arrival;
         private DataGridViewTextBoxColumn Burst;
+        private DataGridViewTextBoxColumn Priority;
     }
 }
