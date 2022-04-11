@@ -34,14 +34,14 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.insertButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.backButton = new System.Windows.Forms.Button();
-            this.drawButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.PName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Burst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Priority = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backButton = new System.Windows.Forms.Button();
+            this.drawButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,42 +105,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(300, 188);
             this.dataGridView1.TabIndex = 6;
             // 
-            // backButton
-            // 
-            this.backButton.Location = new System.Drawing.Point(12, 12);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(94, 29);
-            this.backButton.TabIndex = 7;
-            this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click_1);
-            // 
-            // drawButton
-            // 
-            this.drawButton.Location = new System.Drawing.Point(659, 368);
-            this.drawButton.Name = "drawButton";
-            this.drawButton.Size = new System.Drawing.Size(94, 29);
-            this.drawButton.TabIndex = 8;
-            this.drawButton.Text = "Draw";
-            this.drawButton.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(77, 281);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Priority";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Location = new System.Drawing.Point(176, 278);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(125, 39);
-            this.richTextBox3.TabIndex = 10;
-            this.richTextBox3.Text = "";
-            // 
             // PName
             // 
             this.PName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -172,6 +136,43 @@
             this.Priority.MinimumWidth = 6;
             this.Priority.Name = "Priority";
             this.Priority.ReadOnly = true;
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(94, 29);
+            this.backButton.TabIndex = 7;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click_1);
+            // 
+            // drawButton
+            // 
+            this.drawButton.Enabled = false;
+            this.drawButton.Location = new System.Drawing.Point(659, 368);
+            this.drawButton.Name = "drawButton";
+            this.drawButton.Size = new System.Drawing.Size(94, 29);
+            this.drawButton.TabIndex = 8;
+            this.drawButton.Text = "Draw";
+            this.drawButton.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(77, 281);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Priority";
+            // 
+            // richTextBox3
+            // 
+            this.richTextBox3.Location = new System.Drawing.Point(176, 278);
+            this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.Size = new System.Drawing.Size(125, 39);
+            this.richTextBox3.TabIndex = 10;
+            this.richTextBox3.Text = "";
             // 
             // PriorityDataWindow
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -41,7 +42,10 @@
             this.drawButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.quantumButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,6 +143,7 @@
             // 
             // drawButton
             // 
+            this.drawButton.Enabled = false;
             this.drawButton.Location = new System.Drawing.Point(659, 368);
             this.drawButton.Name = "drawButton";
             this.drawButton.Size = new System.Drawing.Size(94, 29);
@@ -164,11 +169,27 @@
             this.richTextBox3.TabIndex = 10;
             this.richTextBox3.Text = "";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // quantumButton
+            // 
+            this.quantumButton.Enabled = false;
+            this.quantumButton.Location = new System.Drawing.Point(334, 297);
+            this.quantumButton.Name = "quantumButton";
+            this.quantumButton.Size = new System.Drawing.Size(119, 29);
+            this.quantumButton.TabIndex = 11;
+            this.quantumButton.Text = "Enter quantum";
+            this.quantumButton.UseVisualStyleBackColor = true;
+            this.quantumButton.Click += new System.EventHandler(this.quantumButton_Click);
+            // 
             // RRDataWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.quantumButton);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.drawButton);
@@ -182,6 +203,7 @@
             this.Name = "RRDataWindow";
             this.Text = "RRDataWindow";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,5 +223,7 @@
         private DataGridViewTextBoxColumn Burst;
         private Label label3;
         private RichTextBox richTextBox3;
+        private ErrorProvider errorProvider1;
+        private Button quantumButton;
     }
 }

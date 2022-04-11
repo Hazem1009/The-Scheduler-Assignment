@@ -137,6 +137,7 @@
             // 
             // drawButton
             // 
+            this.drawButton.Enabled = false;
             this.drawButton.Location = new System.Drawing.Point(659, 368);
             this.drawButton.Name = "drawButton";
             this.drawButton.Size = new System.Drawing.Size(94, 29);

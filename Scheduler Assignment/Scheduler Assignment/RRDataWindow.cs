@@ -14,6 +14,7 @@ namespace Scheduler_Assignment
     {
         private int processesNumber;
         private int insertedNumber = 0;
+        private float quantum;
         private MainWindow mainWindow;
         private List<Process> processList = new List<Process>();
 
@@ -42,6 +43,7 @@ namespace Scheduler_Assignment
             if (insertedNumber == processesNumber) {
                 insertButton.Enabled = false;
                 richTextBox3.Enabled = true;
+                quantumButton.Enabled = true;
             }
             Process p = new Process(arrivalTime, burstTime);
             processList.Add(p);
@@ -53,6 +55,12 @@ namespace Scheduler_Assignment
         {
             mainWindow.Show();
             this.Close();
+        }
+
+        private void quantumButton_Click(object sender, EventArgs e)
+        {
+            quantum = float.Parse(richTextBox3.Text);
+            drawButton.Enabled = true;
         }
     }
 }

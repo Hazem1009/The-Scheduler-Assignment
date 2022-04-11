@@ -40,7 +40,10 @@ namespace Scheduler_Assignment
             float burstTime = float.Parse(richTextBox2.Text);
             int priority = int.Parse(richTextBox3.Text);
             insertedNumber++;
-            if (insertedNumber == processesNumber) insertButton.Enabled = false;
+            if (insertedNumber == processesNumber) {
+                insertButton.Enabled = false;
+                drawButton.Enabled = true;
+            }
             Process p = new Process(arrivalTime, burstTime, priority);
             processList.Add(p);
             string[] row = {p.name, p.arrivalTime.ToString(), p.burstTime.ToString(), p.priority.ToString()};
