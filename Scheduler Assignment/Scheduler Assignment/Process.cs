@@ -13,6 +13,8 @@ namespace Scheduler_Assignment
         public float burstTime;
         public float remainingTime; 
         public int? priority;
+        public float? endTime;
+        public Boolean inQueue = false;
         private static int count = 0;
 
         public Process(float arrivalTime, float burstTime, int? priority = null)
