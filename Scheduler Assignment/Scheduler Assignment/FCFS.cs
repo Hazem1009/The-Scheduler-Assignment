@@ -29,7 +29,7 @@ namespace Scheduler_Assignment
                     count++;
                 }
                 /*Variable to Keep up with our GanttChart time axis*/
-                float Time = 0;
+                float Time = heap.Peek().arrivalTime;
                
                 while (heap.Count > 0)
                 {
