@@ -37,18 +37,46 @@ namespace Scheduler_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int arrivalTime = int.Parse(richTextBox1.Text);
-            int burstTime = int.Parse(richTextBox2.Text);
-            insertedNumber++;
-            if (insertedNumber == processesNumber) {
-                insertButton.Enabled = false;
-                richTextBox3.Enabled = true;
-                quantumButton.Enabled = true;
+            float arrivalTime, burstTime;
+            if (!float.TryParse(richTextBox1.Text, out float result))
+            {
+                errorProvider1.SetError(label1, "Please enter a valid number");
             }
-            Process p = new Process(arrivalTime, burstTime);
-            processList.Add(p);
-            string[] row = {p.name, p.arrivalTime.ToString(), p.burstTime.ToString()};
-            dataGridView1.Rows.Add(row);
+            else if (!float.TryParse(richTextBox2.Text, out float result2))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(label2, "Please enter a valid number");
+            }
+            else
+            {
+                arrivalTime = float.Parse(richTextBox1.Text);
+                burstTime = float.Parse(richTextBox2.Text);
+                if (arrivalTime < 0)
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(label1, "Arrival time must be nonnegative");
+                }
+                else if (burstTime <= 0)
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(label2, "Burst time must be positive");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    insertedNumber++;
+                    if (insertedNumber == processesNumber)
+                    {
+                        insertButton.Enabled = false;
+                        richTextBox3.Enabled = true;
+                        quantumButton.Enabled = true;
+                    }
+                    Process p = new Process(arrivalTime, burstTime);
+                    processList.Add(p);
+                    string[] row = { p.name, p.arrivalTime.ToString(), p.burstTime.ToString() };
+                    dataGridView1.Rows.Add(row);
+                }
+            }
         }
 
         private void backButton_Click_1(object sender, EventArgs e)
@@ -59,8 +87,23 @@ namespace Scheduler_Assignment
 
         private void quantumButton_Click(object sender, EventArgs e)
         {
-            quantum = float.Parse(richTextBox3.Text);
-            drawButton.Enabled = true;
+            if(!float.TryParse(richTextBox3.Text, out float result))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(label3, "Please enter a valid number");
+            }
+            else
+            {
+                quantum = float.Parse(richTextBox3.Text);
+                if (quantum <= 0)
+                {
+                    errorProvider1.SetError(label3, "Quantum must be positive");
+                }
+                else
+                {
+                    drawButton.Enabled = true;
+                }
+            }
         }
     }
 }
