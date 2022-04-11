@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -39,7 +40,9 @@
             this.Burst = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backButton = new System.Windows.Forms.Button();
             this.drawButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -145,6 +148,10 @@
             this.drawButton.Text = "Draw";
             this.drawButton.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // BasicDataWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -161,6 +168,7 @@
             this.Name = "BasicDataWindow";
             this.Text = "BasicDataWindow";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +186,6 @@
         private DataGridViewTextBoxColumn PName;
         private DataGridViewTextBoxColumn Arrival;
         private DataGridViewTextBoxColumn Burst;
+        private ErrorProvider errorProvider1;
     }
 }
