@@ -20,14 +20,17 @@ namespace Scheduler_Assignment
             }
             else if (int.Parse(richTextBox1.Text) <= 0)
             {
+                errorProvider1.Clear();
                 errorProvider1.SetError(label1, "Number of processes must be positive");
             }
             else if (comboBox1.SelectedItem == null)
             {
+                errorProvider1.Clear();
                 errorProvider1.SetError(label2, "Please select an algorithm");
             }
             else
             {
+                errorProvider1.Clear();
                 Form dataWindow;
                 if (comboBox1.Text == "FCFS" || comboBox1.Text == "SJF (Non-Preemptive)" || comboBox1.Text == "SJF (Preemptive)")
                 {
