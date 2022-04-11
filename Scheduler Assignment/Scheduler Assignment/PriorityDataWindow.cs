@@ -36,18 +36,57 @@ namespace Scheduler_Assignment
 
         private void button1_Click(object sender, EventArgs e)
         {
-            float arrivalTime = float.Parse(richTextBox1.Text);
-            float burstTime = float.Parse(richTextBox2.Text);
-            int priority = int.Parse(richTextBox3.Text);
-            insertedNumber++;
-            if (insertedNumber == processesNumber) {
-                insertButton.Enabled = false;
-                drawButton.Enabled = true;
+            float arrivalTime, burstTime;
+            int priority;
+            if (!float.TryParse(richTextBox1.Text, out float result))
+            {
+                errorProvider1.SetError(label1, "Please enter a valid number");
             }
-            Process p = new Process(arrivalTime, burstTime, priority);
-            processList.Add(p);
-            string[] row = {p.name, p.arrivalTime.ToString(), p.burstTime.ToString(), p.priority.ToString()};
-            dataGridView1.Rows.Add(row);
+            else if (!float.TryParse(richTextBox2.Text, out float result2))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(label2, "Please enter a valid number");
+            }
+            else if (!int.TryParse(richTextBox3.Text, out int result3))
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(label3, "Please enter a valid integer");
+            }
+            else
+            {
+                arrivalTime = float.Parse(richTextBox1.Text);
+                burstTime = float.Parse(richTextBox2.Text);
+                priority = int.Parse(richTextBox3.Text);
+                if (arrivalTime < 0)
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(label1, "Arrival time must be nonnegative");
+                }
+                else if (burstTime <= 0)
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(label2, "Burst time must be positive");
+                }
+                else if (priority <= 0)
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(label3, "Priority must be positive");
+                }
+                else
+                {
+                    errorProvider1.Clear();
+                    insertedNumber++;
+                    if (insertedNumber == processesNumber)
+                    {
+                        insertButton.Enabled = false;
+                        drawButton.Enabled = true;
+                    }
+                    Process p = new Process(arrivalTime, burstTime, priority);
+                    processList.Add(p);
+                    string[] row = { p.name, p.arrivalTime.ToString(), p.burstTime.ToString(), p.priority.ToString() };
+                    dataGridView1.Rows.Add(row);
+                }
+            }
         }
 
         private void backButton_Click_1(object sender, EventArgs e)
