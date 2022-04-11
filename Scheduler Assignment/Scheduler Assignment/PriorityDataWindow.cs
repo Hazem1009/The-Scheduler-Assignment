@@ -85,6 +85,8 @@ namespace Scheduler_Assignment
                     processList.Add(p);
                     string[] row = { p.name, p.arrivalTime.ToString(), p.burstTime.ToString(), p.priority.ToString() };
                     dataGridView1.Rows.Add(row);
+                    richTextBox1.Clear();
+                    richTextBox2.Clear();
                 }
             }
         }
