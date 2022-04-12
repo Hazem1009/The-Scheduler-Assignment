@@ -25,7 +25,7 @@ namespace Scheduler_Assignment
                 //add processes to heap in the arrived, priority based on shortest burst, inQueue flag ensures no process duplication
                 foreach (Process process in processes)
                 {
-                    if (process.arrivalTime <= timer && process.burstTime > 0 && !process.inQueue)
+                    if (process.arrivalTime <= timer && process.remainingTime > 0 && !process.inQueue)
                     {
                         heap.Enqueue(process, process.burstTime);
                         process.inQueue = true;
@@ -42,7 +42,7 @@ namespace Scheduler_Assignment
                 timer += temp.burstTime;
                 temp.endTime = timer;
 
-                temp.burstTime = 0;
+                temp.remainingTime = 0;
                 //Console.WriteLine("process out: " + temp.name + " " + temp.burstTime); //for debugging
 
                 //updates number of completed processes
