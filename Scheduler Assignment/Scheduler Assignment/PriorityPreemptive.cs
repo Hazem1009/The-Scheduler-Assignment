@@ -52,7 +52,11 @@ namespace Scheduler_Assignment
                 /* We dont need to continue with same logic if its the last check point we can now start dequeuing directly */
                 if (i == checkTimes.Count - 1)
                     break;
-
+                /*Case we have an idle slot(Processes arrive in next check time) but the previous process remaining time was less than the difference between two consecutives check times*/
+                if(sortedProcesses.Count==0)
+                { 
+                    continue;
+                }
                 /* Dequeing from the list */
                 Process pMaxPriority = sortedProcesses[0];
                 sortedProcesses.RemoveAt(0);
