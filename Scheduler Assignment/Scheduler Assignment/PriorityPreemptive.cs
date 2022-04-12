@@ -91,8 +91,20 @@ namespace Scheduler_Assignment
                 totaTurnAroundTime += matchedList[matchedList.Count - 1].endTime - process.arrivalTime;
                 totaWaitingTime += matchedList[matchedList.Count - 1].endTime - process.arrivalTime - process.burstTime;
             }
-
-            return (totaWaitingTime / processes.Count, totaTurnAroundTime / processes.Count, ganttBlocks);
+            List<GanttBlock> toDrawBlocks = new List<GanttBlock>();
+            for (int it = 0; it < ganttBlocks.Count ; it++)
+            {
+                float start = ganttBlocks[it].startTime;
+                float end = ganttBlocks[it].endTime;
+                while ((it < ganttBlocks.Count - 1) && (ganttBlocks[it + 1].name == ganttBlocks[it].name))
+                {
+                    it++;
+                    end = ganttBlocks[it].endTime;
+                }
+                toDrawBlocks.Add(new GanttBlock(ganttBlocks[it].name, start, end));
+            }
+           
+            return (totaWaitingTime / processes.Count, totaTurnAroundTime / processes.Count, toDrawBlocks);
         }
     }
 }
