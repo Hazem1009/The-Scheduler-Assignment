@@ -24,6 +24,8 @@ namespace Scheduler_Assignment
             }
             /*Sorting the check points*/
             checkTimes.Sort();
+            /*To remove Duplicate check times*/
+            checkTimes=checkTimes.Distinct().ToList();
             /*a priority queue to add already arrived items to keep track of processing of next and interrupted processes,prio is according to Process priority*/
             PriorityQueue<Process, int> pq = new PriorityQueue<Process, int>();
             /*looping on all check times*/
@@ -59,6 +61,19 @@ namespace Scheduler_Assignment
             while (pq.Count > 0)
             {
                 Process p = pq.Dequeue();
+                  /*Handles a problem if 2 processes have same prio but p2 has higher process number than 1 
+                    *p2 arrived earlier than p1 but both have same prio p1 would interrupt p2 without following block
+                    */
+                if ((pq.Count!=0)&&(pq.Peek().priority.Value == p.priority.Value)) { 
+                    
+                    if (pq.Peek().arrivalTime < p.arrivalTime)
+                    {
+                        Process holder = pq.Dequeue();
+                        pq.Enqueue(p,p.priority.Value);
+                        p=holder;
+                    }
+                }
+                     
                 ganttBlocks.Add(new GanttBlock(p.name, time, time + p.remainingTime));
 
                 time = time + p.remainingTime;/*To keep up with our timeline*/
