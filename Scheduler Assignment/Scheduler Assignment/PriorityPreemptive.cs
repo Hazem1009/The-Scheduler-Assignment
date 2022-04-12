@@ -24,6 +24,8 @@ namespace Scheduler_Assignment
             }
             /*Sorting the check points*/
             checkTimes.Sort();
+            /*To remove Duplicate check times*/
+            checkTimes=checkTimes.Distinct().ToList();
             /*a priority queue to add already arrived items to keep track of processing of next and interrupted processes,prio is according to Process priority*/
             PriorityQueue<Process, int> pq = new PriorityQueue<Process, int>();
             /*looping on all check times*/
