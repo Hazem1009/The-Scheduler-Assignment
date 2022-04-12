@@ -45,7 +45,7 @@ namespace Scheduler_Assignment
                 /*Condition to insert a new check point if current process can be completely finished in time less than difference between 2 check times*/
                 if (p_max_priority.remainingTime < checkTimes[i + 1] - checkTimes[i])
                 {
-                    checkTimes.Insert(i + 1, p_max_priority.burstTime - checkTimes[i]);
+                    checkTimes.Insert(i + 1, p_max_priority.remainingTime - checkTimes[i]);
                 }
                 p_max_priority.remainingTime = p_max_priority.remainingTime - (checkTimes[i + 1] - checkTimes[i]);
                 /*We need to requeue the process if still got remaining time*/
