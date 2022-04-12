@@ -60,7 +60,7 @@ namespace Scheduler_Assignment
                 /* Condition to insert a new check point if current process can be completely finished in time less than difference between 2 check times */
                 if (pMaxPriority.remainingTime < checkTimes[i + 1] - checkTimes[i])
                 {
-                    checkTimes.Insert(i + 1, pMaxPriority.remainingTime - checkTimes[i]);
+                    checkTimes.Insert(i + 1, pMaxPriority.remainingTime + checkTimes[i]);
                 }
                 pMaxPriority.remainingTime = pMaxPriority.remainingTime - (checkTimes[i + 1] - checkTimes[i]);
 
