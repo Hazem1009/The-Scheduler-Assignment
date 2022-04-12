@@ -15,11 +15,17 @@ namespace Scheduler_Assignment
             int completion = 0;
             float totalWait = 0;
 
+            //sorting by arrival time
+            processes = processes.OrderBy(p => p.arrivalTime).ToList();
+
             List<GanttBlock> gantt = new List<GanttBlock>();
 
             
             PriorityQueue<Process, float> heap = new PriorityQueue<Process, float>();
 
+
+            // i acts like a pointer to which process we accesed last
+            int i = 0;
             while (completion < processes.Count)
             {
                 //add processes to heap in the arrived, priority based on shortest burst, inQueue flag ensures no process duplication
@@ -29,8 +35,18 @@ namespace Scheduler_Assignment
                     {
                         heap.Enqueue(process, process.burstTime);
                         process.inQueue = true;
+                        i++;
                         //Console.WriteLine("process in : "+ process.name +" "+ process.burstTime); //for debugging 
                     }
+
+                }
+
+                //to handle idle case 
+                if (heap.Count == 0)
+                {
+                    gantt.Add(new GanttBlock("idle", timer, processes[i].arrivalTime));
+                    timer = processes[i].arrivalTime;
+                    continue;
 
                 }
 
