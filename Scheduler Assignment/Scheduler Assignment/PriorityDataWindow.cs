@@ -14,15 +14,20 @@ namespace Scheduler_Assignment
     {
         private int processesNumber;
         private int insertedNumber = 0;
+        private int type;
+        private float averageWaiting;
+        private float averageTurnaround;
         private MainWindow mainWindow;
         private List<Process> processList = new List<Process>();
+        private List<GanttBlock> ganttBlocks = new List<GanttBlock>();
 
-        public PriorityDataWindow(int number, MainWindow main)
+        public PriorityDataWindow(int number, MainWindow main, int type)
         {
             InitializeComponent();
             processesNumber = number;
             mainWindow = main;
-        }
+            this.type = type;
+         }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -99,7 +104,8 @@ namespace Scheduler_Assignment
 
         private void drawButton_Click(object sender, EventArgs e)
         {
-
+            if (type == 0) (averageWaiting, averageTurnaround, ganttBlocks) = PriorityNonPreemptive.Priority_NP(processList);
+            else (averageWaiting, averageTurnaround, ganttBlocks) = PriorityPreemptive.Priority_P(processList);
         }
     }
 }

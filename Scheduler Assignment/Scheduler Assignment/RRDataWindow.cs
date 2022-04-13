@@ -17,6 +17,7 @@ namespace Scheduler_Assignment
         private float quantum;
         private MainWindow mainWindow;
         private List<Process> processList = new List<Process>();
+        private List<GanttBlock> ganttBlocks = new List<GanttBlock>();
 
         public RRDataWindow(int number, MainWindow main)
         {

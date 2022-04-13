@@ -14,14 +14,19 @@ namespace Scheduler_Assignment
     {
         private int processesNumber;
         private int insertedNumber = 0;
+        private int type;
+        private float averageWaiting;
+        private float averageTurnaround;
         private MainWindow mainWindow;
         private List<Process> processList = new List<Process>();
+        private List<GanttBlock> ganttBlocks = new List<GanttBlock>();
 
-        public BasicDataWindow(int number, MainWindow main)
+        public BasicDataWindow(int number, MainWindow main, int type)
         {
             InitializeComponent();
             processesNumber = number;
             mainWindow = main;
+            this.type = type;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -87,7 +92,9 @@ namespace Scheduler_Assignment
 
         private void drawButton_Click(object sender, EventArgs e)
         {
-
+            if (type == 0) (averageWaiting, averageTurnaround, ganttBlocks) = FCFS.FCFS_Schedule(processList);
+            else if (type == 1) (averageWaiting, ganttBlocks) = SJFNonPreemptive.SJFNon(processList);
+            else (averageWaiting, averageTurnaround, ganttBlocks) = SJFPreemptive.SJFP(processList);
         }
     }
 }
