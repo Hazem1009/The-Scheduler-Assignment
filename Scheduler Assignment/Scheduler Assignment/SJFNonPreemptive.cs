@@ -8,13 +8,13 @@ namespace Scheduler_Assignment
 {
     internal class SJFNonPreemptive
     {
-        public static (float avgWaiting, List<GanttBlock>) SJFNon(List<Process> processes)
+        public static (float, float, List<GanttBlock>) SJFNon(List<Process> processes)
         {
             float timer = 0;
             //completion is number of completed processes
             int completion = 0;
             float totalWait = 0;
-
+            float totalTurnAround = 0;
             //sorting by arrival time
             processes = processes.OrderBy(p => p.arrivalTime).ToList();
 
@@ -44,7 +44,7 @@ namespace Scheduler_Assignment
                 //to handle idle case 
                 if (heap.Count == 0)
                 {
-                    gantt.Add(new GanttBlock("idle", timer, processes[i].arrivalTime));
+                    gantt.Add(new GanttBlock("idle", timer, processes[i].arrivalTime)); 
                     timer = processes[i].arrivalTime;
                     continue;
 
@@ -65,7 +65,12 @@ namespace Scheduler_Assignment
                 completion++;
             }
 
-            return (totalWait / processes.Count, gantt);
+            foreach (Process process in processes)
+            {
+                totalTurnAround += (float) process.endTime - process.arrivalTime;
+            }
+
+            return (totalWait / processes.Count, totalTurnAround/ processes.Count, gantt);
         }
     }
 }
