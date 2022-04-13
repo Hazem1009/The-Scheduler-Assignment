@@ -44,7 +44,7 @@ namespace Scheduler_Assignment
                 //to handle idle case 
                 if (heap.Count == 0)
                 {
-                    gantt.Add(new GanttBlock("idle", timer, processes[i].arrivalTime)); 
+                    //gantt.Add(new GanttBlock("idle", timer, processes[i].arrivalTime));    //removed :(
                     timer = processes[i].arrivalTime;
                     continue;
 
