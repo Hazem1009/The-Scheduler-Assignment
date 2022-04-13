@@ -15,6 +15,8 @@ namespace Scheduler_Assignment
         private int processesNumber;
         private int insertedNumber = 0;
         private float quantum;
+        private float averageWaiting;
+        private float averageTurnaround;
         private MainWindow mainWindow;
         private List<Process> processList = new List<Process>();
         private List<GanttBlock> ganttBlocks = new List<GanttBlock>();
@@ -111,7 +113,7 @@ namespace Scheduler_Assignment
 
         private void drawButton_Click(object sender, EventArgs e)
         {
-
+            (averageWaiting, averageTurnaround, ganttBlocks) = RoundRobin.roundRobin(processList, quantum);
         }
     }
 }

@@ -93,7 +93,7 @@ namespace Scheduler_Assignment
         private void drawButton_Click(object sender, EventArgs e)
         {
             if (type == 0) (averageWaiting, averageTurnaround, ganttBlocks) = FCFS.FCFS_Schedule(processList);
-            else if (type == 1) (averageWaiting, ganttBlocks) = SJFNonPreemptive.SJFNon(processList);
+            else if (type == 1) (averageWaiting, averageTurnaround, ganttBlocks) = SJFNonPreemptive.SJFNon(processList);
             else (averageWaiting, averageTurnaround, ganttBlocks) = SJFPreemptive.SJFP(processList);
         }
     }
