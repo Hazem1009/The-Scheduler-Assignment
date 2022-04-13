@@ -147,6 +147,7 @@
             this.drawButton.TabIndex = 8;
             this.drawButton.Text = "Draw";
             this.drawButton.UseVisualStyleBackColor = true;
+            this.drawButton.Click += new System.EventHandler(this.drawButton_Click);
             // 
             // errorProvider1
             // 

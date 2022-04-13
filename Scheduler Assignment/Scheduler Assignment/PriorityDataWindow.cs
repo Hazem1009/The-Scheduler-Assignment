@@ -96,5 +96,10 @@ namespace Scheduler_Assignment
             mainWindow.Show();
             this.Close();
         }
+
+        private void drawButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
