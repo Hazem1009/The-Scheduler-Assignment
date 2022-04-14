@@ -23,16 +23,14 @@ namespace Scheduler_Assignment
         
         public List<GanttBlock> blocks;
         private Form dataWindow;
-        float averageWaitingTime = 0;
-        float averageTurnaroundTime = 0;
 
         public GanttVisualizer(List<GanttBlock> blocks, float averageWaitingTime, float averageTurnaroundTime, Form dataWindow)
         {
             this.blocks = blocks;
-            this.averageWaitingTime = averageWaitingTime;
-            this.averageTurnaroundTime = averageTurnaroundTime;
             this.dataWindow = dataWindow;
             InitializeComponent();
+            label1.Text = "Average waiting time: " + averageWaitingTime;
+            label2.Text = "Average turnaround time: " + averageTurnaroundTime;
         }
 
         //Function for filling the gaps between blocks with idle blocks in case of non proceeding blocks.
