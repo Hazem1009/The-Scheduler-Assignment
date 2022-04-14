@@ -92,6 +92,7 @@ namespace Scheduler_Assignment
                     dataGridView1.Rows.Add(row);
                     richTextBox1.Clear();
                     richTextBox2.Clear();
+                    richTextBox3.Clear();
                 }
             }
         }
