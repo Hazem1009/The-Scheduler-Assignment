@@ -47,6 +47,7 @@ namespace Scheduler_Assignment
                     if (comboBox1.Text == "Priority (Non-Preemptive") dataWindow = new PriorityDataWindow(int.Parse(richTextBox1.Text), this, 0);
                     else dataWindow = new PriorityDataWindow(int.Parse(richTextBox1.Text), this, 1);
                 }
+                Process.count = 0;
                 dataWindow.Show();
                 this.Hide();
             }
