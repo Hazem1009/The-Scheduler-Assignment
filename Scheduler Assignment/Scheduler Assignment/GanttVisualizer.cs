@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace Scheduler_Assignment
 {
+
+    /*
+     * 1- Did not add turnaround and waiting time yet 
+     * 
+     * 
+     */
     public partial class GanttVisualizer : Form
     {
-        const int width = 1458;
-        const int height = 679;
-        const int minBoxwidth = 300;
+        const int minBoxwidth = 300;    //Not implemented yet
         public List<Rectangle> rects = new List<Rectangle>();
         
         public List<GanttBlock> blocks;
         float averageWaitingTime = 0;
         float averageTurnaroundTime = 0;
+
         public GanttVisualizer(List<GanttBlock> blocks, float averageWaitingTime, float averageTurnaroundTime)
         {
             this.blocks = blocks;
@@ -27,6 +32,8 @@ namespace Scheduler_Assignment
             this.averageTurnaroundTime = averageTurnaroundTime;
             InitializeComponent();
         }
+
+        //Function for filling the gaps between blocks with idle blocks in case of non proceeding blocks.
         private List<GanttBlock> idleFiller(List<GanttBlock> gList)
         {
             List<GanttBlock> result = new List<GanttBlock>();
@@ -60,7 +67,7 @@ namespace Scheduler_Assignment
             float totalTime = blocks[blocks.Count - 1].endTime;
             float unitWidth = 1200 / totalTime;
             Brush blackBrush = new SolidBrush(Color.Black);
-            g.DrawString("0", Font, blackBrush, new Point(startingWidth, 350));
+            g.DrawString(blocks[0].startTime.ToString(), Font, blackBrush, new Point(startingWidth, 350)); // To be changed
             for (int i = 0; i < blocks.Count; i++)//Gantt blocks
             {
                 Rectangle rect = new Rectangle();
