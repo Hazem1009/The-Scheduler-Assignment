@@ -34,6 +34,12 @@ namespace Scheduler_Assignment
                 while (heap.Count > 0)
                 {
                     Process dequeued = heap.Dequeue();
+                    if (Time < dequeued.arrivalTime)
+                    {
+                        Time += (dequeued.arrivalTime - Time);
+                        heap.Enqueue(dequeued, dequeued.arrivalTime);
+                        continue;
+                    }
                     
                     GanttBlock addedBlock = new GanttBlock(dequeued.name, Time, Time + dequeued.burstTime);
                     
