@@ -96,5 +96,10 @@ namespace Scheduler_Assignment
             else if (type == 1) (averageWaiting, averageTurnaround, ganttBlocks) = SJFNonPreemptive.SJFNon(processList);
             else (averageWaiting, averageTurnaround, ganttBlocks) = SJFPreemptive.SJFP(processList);
         }
+
+        private void BasicDataWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

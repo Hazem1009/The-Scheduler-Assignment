@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scheduler_Assignment
 {
-    internal class GanttBlock
+    public class GanttBlock
     {
         public string name;
         public float startTime, endTime;

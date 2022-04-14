@@ -48,9 +48,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 117);
+            this.label1.Location = new System.Drawing.Point(67, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Arrival time";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -58,33 +58,36 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 210);
+            this.label2.Location = new System.Drawing.Point(67, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 20);
+            this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "Burst time";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(176, 114);
+            this.richTextBox1.Location = new System.Drawing.Point(154, 86);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(125, 37);
+            this.richTextBox1.Size = new System.Drawing.Size(110, 29);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(176, 207);
+            this.richTextBox2.Location = new System.Drawing.Point(154, 155);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(125, 38);
+            this.richTextBox2.Size = new System.Drawing.Size(110, 30);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "";
             // 
             // insertButton
             // 
-            this.insertButton.Location = new System.Drawing.Point(186, 325);
+            this.insertButton.Location = new System.Drawing.Point(163, 244);
+            this.insertButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(94, 29);
+            this.insertButton.Size = new System.Drawing.Size(82, 22);
             this.insertButton.TabIndex = 5;
             this.insertButton.Text = "Insert";
             this.insertButton.UseVisualStyleBackColor = true;
@@ -97,11 +100,12 @@
             this.PName,
             this.Arrival,
             this.Burst});
-            this.dataGridView1.Location = new System.Drawing.Point(488, 103);
+            this.dataGridView1.Location = new System.Drawing.Point(427, 77);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(300, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(262, 141);
             this.dataGridView1.TabIndex = 6;
             // 
             // PName
@@ -130,9 +134,10 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Location = new System.Drawing.Point(10, 9);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(94, 29);
+            this.backButton.Size = new System.Drawing.Size(82, 22);
             this.backButton.TabIndex = 7;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -141,9 +146,10 @@
             // drawButton
             // 
             this.drawButton.Enabled = false;
-            this.drawButton.Location = new System.Drawing.Point(659, 368);
+            this.drawButton.Location = new System.Drawing.Point(577, 276);
+            this.drawButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.drawButton.Name = "drawButton";
-            this.drawButton.Size = new System.Drawing.Size(94, 29);
+            this.drawButton.Size = new System.Drawing.Size(82, 22);
             this.drawButton.TabIndex = 8;
             this.drawButton.Text = "Draw";
             this.drawButton.UseVisualStyleBackColor = true;
@@ -155,9 +161,9 @@
             // 
             // BasicDataWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.ControlBox = false;
             this.Controls.Add(this.drawButton);
             this.Controls.Add(this.backButton);
@@ -167,8 +173,10 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BasicDataWindow";
             this.Text = "BasicDataWindow";
+            this.Load += new System.EventHandler(this.BasicDataWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
