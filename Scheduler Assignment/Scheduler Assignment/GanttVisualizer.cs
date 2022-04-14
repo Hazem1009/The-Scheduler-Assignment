@@ -45,6 +45,7 @@ namespace Scheduler_Assignment
                     result.Add(new GanttBlock("Idle", gList[i].endTime, gList[i + 1].startTime));
                 }
             }
+            result.Add(gList[gList.Count - 1]);
             return result;
         }
         private void panel1_Paint(object sender, PaintEventArgs e)

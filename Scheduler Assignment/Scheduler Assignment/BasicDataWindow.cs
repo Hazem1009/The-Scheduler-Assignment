@@ -95,6 +95,9 @@ namespace Scheduler_Assignment
             if (type == 0) (averageWaiting, averageTurnaround, ganttBlocks) = FCFS.FCFS_Schedule(processList);
             else if (type == 1) (averageWaiting, averageTurnaround, ganttBlocks) = SJFNonPreemptive.SJFNon(processList);
             else (averageWaiting, averageTurnaround, ganttBlocks) = SJFPreemptive.SJFP(processList);
+
+            Form f1 = new GanttVisualizer(ganttBlocks, averageWaiting, averageTurnaround);
+            f1.Show();
         }
 
         private void BasicDataWindow_Load(object sender, EventArgs e)
