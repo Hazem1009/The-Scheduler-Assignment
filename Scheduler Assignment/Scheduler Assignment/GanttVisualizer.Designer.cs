@@ -29,26 +29,41 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(2, 6);
-            this.panel1.MaximumSize = new System.Drawing.Size(1442, 640);
-            this.panel1.MinimumSize = new System.Drawing.Size(1442, 640);
+            this.panel1.Location = new System.Drawing.Point(2, 61);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.MaximumSize = new System.Drawing.Size(1648, 853);
+            this.panel1.MinimumSize = new System.Drawing.Size(1648, 800);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1442, 640);
+            this.panel1.Size = new System.Drawing.Size(1648, 800);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(94, 29);
+            this.backButton.TabIndex = 1;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
             // GanttVisualizer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1447, 650);
+            this.ClientSize = new System.Drawing.Size(1651, 856);
+            this.ControlBox = false;
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.panel1);
-            this.MaximumSize = new System.Drawing.Size(1463, 689);
-            this.MinimumSize = new System.Drawing.Size(1463, 689);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximumSize = new System.Drawing.Size(1669, 903);
+            this.MinimumSize = new System.Drawing.Size(1669, 903);
             this.Name = "GanttVisualizer";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -58,5 +73,6 @@
         #endregion
 
         private Panel panel1;
+        private Button backButton;
     }
 }

@@ -114,7 +114,8 @@ namespace Scheduler_Assignment
         private void drawButton_Click(object sender, EventArgs e)
         {
             (averageWaiting, averageTurnaround, ganttBlocks) = RoundRobin.roundRobin(processList, quantum);
-            Form f1 = new GanttVisualizer(ganttBlocks, averageWaiting, averageTurnaround);
+            Form f1 = new GanttVisualizer(ganttBlocks, averageWaiting, averageTurnaround, this);
+            this.Hide();
             f1.Show();
             
         }

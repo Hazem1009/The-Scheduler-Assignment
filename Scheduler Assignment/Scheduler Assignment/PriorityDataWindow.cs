@@ -108,7 +108,8 @@ namespace Scheduler_Assignment
             if (type == 0) (averageWaiting, averageTurnaround, ganttBlocks) = PriorityNonPreemptive.Priority_NP(processList);
             else (averageWaiting, averageTurnaround, ganttBlocks) = PriorityPreemptive.Priority_P(processList);
 
-            Form f1 = new GanttVisualizer(ganttBlocks, averageWaiting, averageTurnaround);
+            Form f1 = new GanttVisualizer(ganttBlocks, averageWaiting, averageTurnaround, this);
+            this.Hide();
             f1.Show();
         }
     }
