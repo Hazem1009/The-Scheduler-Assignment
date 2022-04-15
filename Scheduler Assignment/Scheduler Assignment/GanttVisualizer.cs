@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Scheduler_Assignment
+﻿namespace Scheduler_Assignment
 {
 
     /*
@@ -20,9 +10,10 @@ namespace Scheduler_Assignment
     {
         const int minBoxwidth = 300;    //Not implemented yet
         public List<Rectangle> rects = new List<Rectangle>();
-        
+
         public List<GanttBlock> blocks;
         private Form mainWindow;
+        private bool drawn = false;
 
         public GanttVisualizer(List<GanttBlock> blocks, float averageWaitingTime, float averageTurnaroundTime, Form mainWindow)
         {
@@ -50,8 +41,7 @@ namespace Scheduler_Assignment
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
-
+            Graphics g = e.Graphics; //Call
             /*
              * Example 
              * 
@@ -62,9 +52,7 @@ namespace Scheduler_Assignment
              * blocks.Add(new GanttBlock("P4", 6, 10));
              * blocks.Add(new GanttBlock("P5", 10, 12));
             */
-
             int startingWidth = 100;
-            Graphics g = e.Graphics; //Call
             blocks = idleFiller(blocks);
             float totalTime = blocks[blocks.Count - 1].endTime;
             float unitWidth = 1200 / totalTime;
@@ -79,7 +67,8 @@ namespace Scheduler_Assignment
 
                 rect.X = startingWidth;
                 rect.Y = 300;
-                rects.Add(rect);
+                if (!drawn)
+                    rects.Add(rect);
 
                 startingWidth += blockWidth;//Depends on the time
                 g.DrawString(blocks[i].endTime.ToString(), Font, blackBrush, new Point(startingWidth, 350));
@@ -95,7 +84,7 @@ namespace Scheduler_Assignment
                 Pen p = new Pen(Color.Blue);
                 g.DrawRectangle(p, r);
             }
-
+            drawn = true;
         }
 
         private void backButton_Click(object sender, EventArgs e)
