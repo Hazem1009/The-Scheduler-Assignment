@@ -22,12 +22,12 @@ namespace Scheduler_Assignment
         public List<Rectangle> rects = new List<Rectangle>();
         
         public List<GanttBlock> blocks;
-        private Form dataWindow;
+        private Form mainWindow;
 
-        public GanttVisualizer(List<GanttBlock> blocks, float averageWaitingTime, float averageTurnaroundTime, Form dataWindow)
+        public GanttVisualizer(List<GanttBlock> blocks, float averageWaitingTime, float averageTurnaroundTime, Form mainWindow)
         {
             this.blocks = blocks;
-            this.dataWindow = dataWindow;
+            this.mainWindow = mainWindow;
             InitializeComponent();
             label1.Text = "Average waiting time: " + averageWaitingTime;
             label2.Text = "Average turnaround time: " + averageTurnaroundTime;
@@ -100,7 +100,7 @@ namespace Scheduler_Assignment
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            dataWindow.Show();
+            mainWindow.Show();
         }
     }
 }
