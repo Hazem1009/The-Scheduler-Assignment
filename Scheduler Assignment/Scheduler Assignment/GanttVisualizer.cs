@@ -51,6 +51,7 @@ namespace Scheduler_Assignment
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+
             /*
              * Example 
              * 
